@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;}
+@font-face{
+    font-family: 'mononoki';
+    src: url('mononoki-Regular.ttf') format('truetype');
+}
+.wrapper{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #E4E4E4;
+}
+header{
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    background-color: #E4E4E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 30px;
+    font-family: mononoki;
+    z-index: 10;
+}
+.left{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    justify-content: start;
+
+}
+.right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-around;
+}
+.overlay-parent{
+    height: 100vh;
+    position: relative;
+        background-color: #E4E4E4;
+
+    width: 100%;
+    top: 10vh;
+    z-index: 1;
+    overflow: hidden; 
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.overlay{
+    height: 100%;
+    width: 200%;
+    position: absolute;
+        background-color: #E4E4E4;
+
+    left: -60%;
+    top: -110%;
+    transform: rotate(0deg);
+    transition: top 0.4s cubic-bezier(.05,.78,.9,.59), transform 0.4s cubic-bezier(.05,.78,.9,.59);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.overlay-content{
+  width: 70%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 100px;
+}
+.overlay-content h1{
+    font-weight: 800;
+    font-size: 120px;
+}  
+
+
+.page{
+    height: 100%;
+    width: 100%;
+
+}
+.menu-p{
+    position:relative;
+    cursor: pointer;
+}
+.menu-p::before{
+    content:"";
+    height: 2px;
+    width: 0%;
+    background-color: black;
+    position: absolute;
+    bottom:0;
+    transition: all ease 0.5s;
+}
+.menu-p:hover::before{
+    width: 100%;
+}
+.line{
+    position:relative;
+    cursor: pointer;
+}
+.line::before{
+    content:"";
+    height: 2px;
+    background-color: black;
+    width: 0%;
+    position: absolute;
+    bottom:0;
+    transition: all ease 0.5s;
+}
+.line:hover::before{
+    width: 100%;
+
+}
+.video-container{
+    height: 300px;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    position: fixed;
+    z-index: 9;
+    
+}
+.content{
+    width: 70%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.content h1{
+    font-weight: 900;
+    font-size: 120px;
+}
+.video-container video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.Main-video{
+   height: 100vh;
+   width: 100%; 
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+   margin-bottom: 10px;
+}
+.Main-video video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+.pageabove{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 5p0x;
+}
+.pageabove p{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.pageabove h1{
+    font-weight:900;
+    font-size: 60px;
+    font-family: 'Anton', sans-serif;
+}
+.play{
+   width: 100%;
+   height: 80vh;
+       background-color: #E4E4E4;
+       display: flex;
+       align-items:end;
+       justify-content: center;
+       padding-bottom: 150px;
+ 
+}
+.play h1{
+    font-size: 120px;
+    font-weight: 900;
+}
+.page1{
+       background-color: #E4E4E4;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+   padding: 30px 0px;
+}
+.box{
+    height: 650px;
+    width: 650px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.overlay-img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+.overlay-img video{
+    height: 40%;
+    width: 70%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.page2{
+    width: 100%;
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   padding-top:150px;
+
+}
+.page2 span{
+    font-size: 50px;
+    font-weight: 900;
+    margin: 10px 0;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:40px;
+    padding-left: 20px;
+}
+.page2 span video{
+ height: 300px;
+ width: 350px;
+ position: absolute;
+ left:10px;
+ opacity: 0;
+ border-radius: 20px;
+ object-fit: cover;
+ object-position: center;
+}
+
+.page2:hover span{
+    opacity: 0.5;
+}
+.page2 span:hover{
+    opacity: 1;
+}
+.page2 span:hover video{
+    opacity: 1;
+}
+body.dark-mode .line::before,
+body.dark-mode .menu-p::before{
+    background-color: #fff;
+}
+body.dark-mode .video-container{
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: border 0.3s ease;
+}
+.det{
+    position: relative;
+}
+.det img{
+    width: 250px;
+    height: 350px;
+    opacity: 0;
+    position: absolute;
+    transition: all ease 0.5s;
+    top: 50%;
+    left: 50%;
+}
+.heading{
+    display: flex;
+    gap: 10PX;
+}
+.heading2{
+    display: flex;
+    gap: 10PX;
+}
+.playground{
+    position: relative;
+}
+.playground img{
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    opacity: 0;
+    transition: all ease 0.5s;
+    top: 50%;
+    left: 50%;
+}
+
